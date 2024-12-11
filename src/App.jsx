@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import FileDisplay from "./components/FileDisplay";
-import Transcription from "./components/TranscriptionResult";
+import Transcription from "./components/Results";
 import Transcribing from "./components/Transcribing";
+import Results from "./components/Results";
 
 function App() {
   const [file, setFile] = useState(null);
@@ -25,7 +26,7 @@ function App() {
       <section className="min-h-screen flex flex-col">
         <Header />
         {output ? (
-          <Transcription />
+          <Results />
         ) : loading ? (
           <Transcribing isDownloading={loading} />
         ) : isAudioAvailable ? (
