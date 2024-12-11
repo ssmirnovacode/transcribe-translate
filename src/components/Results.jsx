@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Translation from "./Translation";
+import Transcription from "./Transcription";
 
 export default function Results() {
   const [tab, setTab] = useState("transcription");
@@ -29,6 +31,7 @@ export default function Results() {
           Translation
         </button>
       </div>
+      {tab === "translation" ? <Translation /> : <Transcription />}
     </main>
   );
 }
