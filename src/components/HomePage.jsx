@@ -1,4 +1,11 @@
-export default function HomePage() {
+import { useRef, useState } from "react";
+
+const MIME_TYPE = "audio/webm";
+
+export default function HomePage({
+  setFile = () => {},
+  setAudioStream = () => {},
+}) {
   return (
     <main className="flex-1 p-4 flex flex-col gap-3 sm:gap-4 md:gap-5 justify-center text-center pb-20">
       <h2 className="font-semibold text-5xl sm:text-6xl md:text-7xl">
@@ -15,11 +22,20 @@ export default function HomePage() {
       <p className="text-base">
         Or{" "}
         <label className="text-blue cursor-pointer hover:text-blue-400 duration-200">
-          upload <input className="hidden" type="file" accept=".mp3,.wave" />
+          upload{" "}
+          <input
+            className="hidden"
+            type="file"
+            accept=".mp3,.wave"
+            onChange={(e) => {
+              const uploadedFile = e.target.files[0];
+              setFile(uploadedFile);
+            }}
+          />
         </label>{" "}
         an mp3 file
       </p>
-      <p className="italic text-slate-500">Some description...</p>
+      <p className="italic text-slate-400">Some description...</p>
     </main>
   );
 }
