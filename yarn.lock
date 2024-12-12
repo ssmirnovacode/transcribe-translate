@@ -348,6 +348,11 @@
   dependencies:
     levn "^0.4.1"
 
+"@huggingface/jinja@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@huggingface/jinja/-/jinja-0.2.2.tgz#faeb205a9d6995089bef52655ddd8245d3190627"
+  integrity sha512-/KPde26khDUIPkTGU82jdtTW9UAuvUTumCAbFs/7giR0SxsvZC4hru51PBvpijH6BVkHcROcvZM/lpy5h1jRRA==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -678,11 +683,12 @@
     "@types/babel__core" "^7.20.5"
     react-refresh "^0.14.2"
 
-"@xenova/transformers@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@xenova/transformers/-/transformers-2.4.2.tgz#b988bac8a6399e6742f2a2a3c41fc8546cfd68eb"
-  integrity sha512-m1QlvNsic/kQJ1F1N02TpYkIBPwB68hZGljO32EM4mHEw4nKlPoQ/9gZ+oUKkavKC/LqgCnmiNQ8jWfa4Zl5AQ==
+"@xenova/transformers@^2.4.2":
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/@xenova/transformers/-/transformers-2.17.2.tgz#7448d73b90f67bced66f39fe2dd656adc891fde5"
+  integrity sha512-lZmHqzrVIkSvZdKZEx7IYY51TK0WDrC8eR0c5IMnBsO8di8are1zzw8BlLhyO2TklZKLN5UffNGs1IJwT6oOqQ==
   dependencies:
+    "@huggingface/jinja" "^0.2.2"
     onnxruntime-web "1.14.0"
     sharp "^0.32.0"
   optionalDependencies:

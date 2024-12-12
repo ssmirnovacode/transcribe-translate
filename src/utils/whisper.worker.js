@@ -1,6 +1,8 @@
-import { pipeline } from "@xenova/transformers";
+import { pipeline, env } from "@xenova/transformers";
 import { MessageTypes } from "./presets";
 
+env.allowLocalModels = false;
+env.useBrowserCache = false;
 class MyTranscriptionPipeline {
   static task = "automatic-speech-recognition";
   static model = "openai/whisper-tiny.en";
@@ -8,10 +10,8 @@ class MyTranscriptionPipeline {
 
   static async getInstance(progress_callback = null) {
     if (this.instance === null) {
-      this.instance = await pipeline(this.task, null, { progress_callback });
-      
+      this.instance = await pipeline("automatic-speech-recognition", null, { progress_callback });
     }
-
     return this.instance;
   }
 }
@@ -58,6 +58,7 @@ async function load_model_callback(data) {
   const { status } = data;
   if (status === "progress") {
     const { file, progress, loaded, total } = data;
+    console.log({ file, progress, loaded, total })
     sendDownloadingMessage(file, progress, loaded, total);
     
   }
