@@ -2,7 +2,7 @@ import { useState } from "react";
 import Translation from "./Translation";
 import Transcription from "./Transcription";
 
-export default function Results() {
+export default function Results(props) {
   const [tab, setTab] = useState("transcription");
   return (
     <main className="flex-1 p-4 flex flex-col gap-3 sm:gap-4 justify-center text-center pb-20  mx-auto max-w-prose w-full">
@@ -31,7 +31,7 @@ export default function Results() {
           Translation
         </button>
       </div>
-      {tab === "translation" ? <Translation /> : <Transcription />}
+      {tab === "translation" ? <Translation /> : <Transcription {...props} />}
     </main>
   );
 }

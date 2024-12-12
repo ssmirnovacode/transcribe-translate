@@ -1,3 +1,4 @@
-export default function Transcription() {
-  return <div>Transcription</div>;
+/* eslint-disable react/prop-types */
+export default function Transcription({ output = {} }) {
+  return <div>{output[0]?.text}</div>;
 }
