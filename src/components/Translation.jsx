@@ -12,8 +12,10 @@ export default function Translation({
 }) {
   return (
     <>
-      {text && !isTranslating && <p>{text}</p>}
-      {!isTranslating && (
+      {!isTranslating && <p>{text}</p>}
+      {isTranslating ? (
+        <div>{"Translation in progress"}</div>
+      ) : (
         <div className="flex flex-col gap-1 mb-4">
           <p className="text-xs sm:text-sm font-medium text-slate-500 mr-auto">
             To language
@@ -34,6 +36,7 @@ export default function Translation({
               })}
             </select>
             <button
+              disabled={toLanguage === "Select language"}
               onClick={generateTranslation}
               className="specialBtn px-3 py-2 rounded-lg text-blue-400 hover:text-blue-600 duration-200"
             >

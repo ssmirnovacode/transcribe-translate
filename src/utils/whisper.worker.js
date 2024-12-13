@@ -30,7 +30,6 @@ async function transcribe(audio) {
 
   try {
     pipeline = await MyTranscriptionPipeline.getInstance(load_model_callback);
-    console.log({pipeline})
   } catch (err) {
     console.error(err);
   }
@@ -40,7 +39,7 @@ async function transcribe(audio) {
   const stride_length_s = 5;
 
   const generationTracker = new GenerationTracker(pipeline, stride_length_s);
-  console.log({pipeline})
+ 
   await pipeline(audio, {
     top_k: 0,
     do_sample: false,
