@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import FileDisplay from "./components/FileDisplay";
-import Transcription from "./components/Results";
-import Transcribing from "./components/Transcribing";
+import Loading from "./components/Loading";
 import Results from "./components/Results";
 import { MessageTypes } from "./utils/presets";
 
@@ -92,7 +91,7 @@ function App() {
         {output ? (
           <Results output={output} finished={finished} />
         ) : loading ? (
-          <Transcribing isDownloading={loading} />
+          <Loading isDownloading={loading} />
         ) : isAudioAvailable ? (
           <FileDisplay
             file={file}

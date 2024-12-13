@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { LANGUAGES } from "../utils/presets";
+import Loading from "./Loading";
 
 /* eslint-disable no-unused-vars */
 export default function Translation({
@@ -14,7 +15,7 @@ export default function Translation({
     <>
       {!isTranslating && <p>{text}</p>}
       {isTranslating ? (
-        <div>{"Translation in progress"}</div>
+        <Loading isDownloading={isTranslating} label={""} />
       ) : (
         <div className="flex flex-col gap-1 mb-4">
           <p className="text-xs sm:text-sm font-medium text-slate-500 mr-auto">
